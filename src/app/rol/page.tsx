@@ -17,7 +17,7 @@ const router = useRouter();
 
   return (
     <>
-      <Navbar selectedOption={selectedOption} onSelect={handleSelect} />
+      <Navbar  />
       <div className="bg-[url('/Background.svg')] bg-cover bg-center h-screen">
         <div className="flex h-screen">
           <Sidebar selectedOption={selectedOption} onSelect={handleSelect} />
@@ -38,6 +38,7 @@ const router = useRouter();
           </main>
         </div>
       </div>
+      
     </>
   );
 }

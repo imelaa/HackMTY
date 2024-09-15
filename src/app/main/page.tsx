@@ -2,7 +2,8 @@
 import React, { useState } from "react";
 import Sidebar from "../components/Sidebar_dashboard";
 import Navbar from "../components/Navbar_dashboard";
-import { Card } from "flowbite-react";
+import CardWithScroll from "../components/cadr_chida";
+
 export default function Page() {
   const [selectedOption, setSelectedOption] = useState<number>(1);
 
@@ -12,19 +13,59 @@ export default function Page() {
 
   return (
     <>
-      <div className="bg-[url('/Background.svg')] bg-cover bg-center overflow-hidden h-screen">
-        <Navbar selectedOption={selectedOption} onSelect={handleSelect} />
-        <div className="flex mt-20">
-          <Sidebar selectedOption={selectedOption} onSelect={handleSelect} />
-        </div>
+      <Navbar />
+      <div className="flex h-screen overflow-hidden">
+        {/* Sidebar */}
+        <Sidebar selectedOption={selectedOption} onSelect={handleSelect} />
 
-        <div className="flex h-screen overflow-hidden">
-          <div className="flex-1 bg-background overflow-auto p-8 flex items-center justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 justify-items-center"></div>
+        {/* Main content */}
+        <main className="flex-1 bg-background overflow-auto">
+          <div className="flex flex-col h-full p-40 ">
+            <CardWithScroll
+              title="Información Importante"
+              content={
+                <div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet
+                    ligula eu turpis pretium, eget dapibus lacus dictum. Integer eget quam sapien.
+                    Curabitur vel neque at dui consectetur tempor ut at nunc. Nulla facilisi.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet
+                    ligula eu turpis pretium, eget dapibus lacus dictum. Integer eget quam sapien.
+                    Curabitur vel neque at dui consectetur tempor ut at nunc. Nulla facilisi.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet
+                    ligula eu turpis pretium, eget dapibus lacus dictum. Integer eget quam sapien.
+                    Curabitur vel neque at dui consectetur tempor ut at nunc. Nulla facilisi.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet
+                    ligula eu turpis pretium, eget dapibus lacus dictum. Integer eget quam sapien.
+                    Curabitur vel neque at dui consectetur tempor ut at nunc. Nulla facilisi.
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet
+                    ligula eu turpis pretium, eget dapibus lacus dictum. Integer eget quam sapien.
+                    Curabitur vel neque at dui consectetur tempor ut at nunc. Nulla facilisi.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet
+                    ligula eu turpis pretium, eget dapibus lacus dictum. Integer eget quam sapien.
+                    Curabitur vel neque at dui consectetur tempor ut at nunc. Nulla facilisi.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet
+                    ligula eu turpis pretium, eget dapibus lacus dictum. Integer eget quam sapien.
+                    Curabitur vel neque at dui consectetur tempor ut at nunc. Nulla facilisi.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet
+                    ligula eu turpis pretium, eget dapibus lacus dictum. Integer eget quam sapien.
+                    Curabitur vel neque at dui consectetur tempor ut at nunc. Nulla facilisi.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet
+                    ligula eu turpis pretium, eget dapibus lacus dictum. Integer eget quam sapien.
+                    Curabitur vel neque at dui consectetur tempor ut at nunc. Nulla facilisi.
+
+                  </p>
+                  {/* Puedes agregar más contenido aquí */}
+                </div>
+              }
+            />
           </div>
-        </div>
+        </main>
       </div>
-      <footer className="flex items-center justify-center w-full h-24 border-t">
+
+      <footer className="w-full h-24 border-t flex items-center justify-center">
         <p>This is the footer</p>
       </footer>
     </>
