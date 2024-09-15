@@ -1,6 +1,8 @@
 "use client";
+import Image from "next/image";
 import React from "react";
 import { useRouter } from "next/navigation";
+import logo from "../../../public/logo.png";
 
 interface SidebarProps {
   selectedOption: number;
@@ -11,27 +13,35 @@ const Sidebar: React.FC<SidebarProps> = ({ selectedOption, onSelect }) => {
   const router = useRouter();
 
   return (
-    <div className="fixed top-20 left-0 w-64 h-screen bg-transparent text-white z-30 ">
-      <div className="flex flex-col items-center justify-center h-1/6">
-        <h1 className="text-2xl">Logo</h1>
+    <div className="h-screen w-64 bg-[#d03027] text-white flex flex-col rounded-r-lg shadow-md z-50">
+      <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-black text-lg mt-5 mx-auto">
+        <Image src={logo} alt="Logo" width={100} height={100} />
       </div>
-      <ul className="flex flex-col mt-4">
-        {[{ name: "Inicio", route: "/" }, { name: "info", route: "/boton2" }, { name: "indice", route: "/boton3" }, { name: "Equipo", route: "/boton3" }, { name: "Recompensas", route: "/boton3" }].map((item, index) => (
+
+      <ul className="flex-1">
+        {["Main Menu", "Indice", "Equipo", "Rewards"].map((text, index) => (
           <li
-            key={index}
-            onClick={() => router.push(item.route)}
-            className={`px-4 py-2 cursor-pointer font-semibold text-center mx-3 rounded-[15px] my-2 transition-colors duration-500 ${
+            key={text}
+            onClick={() => {
+              onSelect(index + 1); // Update selected option
+              router.push(
+                text === "Rewards"
+                  ? "recompensas"
+                  : `/${text.toLowerCase().replace(" ", "-")}`
+              ); // Example routing
+            }}
+            className={`px-4 py-2 cursor-pointer font-semibold text-center mx-3 rounded-[15px] my-5 transition-colors duration-500 ${
               selectedOption === index + 1
-                ? "bg-white text-black"
-                : "hover:bg-slate-50 hover:text-black"
+                ? "bg-white text-[#d03027]" // Active state
+                : "text-white hover:text-[#d03027] hover:bg-red-700"
             }`}
           >
-            {item.name}
+            {text}
           </li>
         ))}
       </ul>
-      <div className="px-4 py-2 text-sm text-gray-400 absolute bottom-0 left-0 w-full text-center">
-        © The Vank 2024
+      <div className="px-4 py-2 text-sm text-gray-200 text-center">
+        © FutureFunds
       </div>
     </div>
   );

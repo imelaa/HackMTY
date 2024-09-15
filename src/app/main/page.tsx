@@ -1,32 +1,34 @@
 "use client";
-import React, { useState } from "react";
-import Sidebar from "../components/Sidebar_dashboard";
-import Navbar from "../components/Navbar_dashboard";
-import { Card } from "flowbite-react";
-export default function Page() {
+
+import React, { useState } from 'react';
+import Sidebar from '../components/sidebar';
+import Progress from '../components/ui/progress'; // Adjust the path as needed
+import Crossword from '../components/CroosWord'; // Correct relative path
+import terms from '../data/terms'; // Import the terms array
+
+export default function Component() {
   const [selectedOption, setSelectedOption] = useState<number>(1);
+  const [currentStep, setCurrentStep] = useState(0);
 
   const handleSelect = (index: number) => {
     setSelectedOption(index);
   };
 
-  return (
-    <>
-      <div className="bg-[url('/Background.svg')] bg-cover bg-center overflow-hidden h-screen">
-        <Navbar selectedOption={selectedOption} onSelect={handleSelect} />
-        <div className="flex mt-20">
-          <Sidebar selectedOption={selectedOption} onSelect={handleSelect} />
-        </div>
+  const steps = ["Start", "Loading", "Ready"];
 
-        <div className="flex h-screen overflow-hidden">
-          <div className="flex-1 bg-background overflow-auto p-8 flex items-center justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 justify-items-center"></div>
-          </div>
-        </div>
-      </div>
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <p>This is the footer</p>
-      </footer>
-    </>
+  const handleStepClick = (step: number) => {
+    if (step <= currentStep + 1) {
+      setCurrentStep(step);
+    }
+  };
+
+  return (
+    <div className="flex h-screen bg-white">
+      <Sidebar selectedOption={selectedOption} onSelect={handleSelect} />
+      <main className="flex-1 ml-64 p-4 overflow-y-auto">
+        <Progress steps={steps} currentStep={currentStep} onStepClick={handleStepClick} />
+        <Crossword terms={terms} /> {/* Use imported terms here */}
+      </main>
+    </div>
   );
 }

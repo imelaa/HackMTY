@@ -1,17 +1,28 @@
+import React from "react";
+import Image from "next/image";
 
-"use client";
-
-import { Card } from "flowbite-react";
-
-export function Component() {
-  return (
-    <Card href="#" className="max-w-sm">
-      <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-        Noteworthy technology acquisitions 2021
-      </h5>
-      <p className="font-normal text-gray-700 dark:text-gray-400">
-        Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-      </p>
-    </Card>
-  );
+interface CardProps {
+  imageUrl: string;
+  title: string;
+  description: string;
 }
+
+const Card: React.FC<CardProps> = ({ imageUrl, title, description }) => {
+  return (
+    <div className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center">
+      <div className="w-full h-32 overflow-hidden rounded-t-lg mb-2">
+        <Image
+          src={imageUrl}
+          alt={title}
+          width={200} // Ajusta el tamaño según sea necesario
+          height={200} // Ajusta el tamaño según sea necesario
+          className="object-cover w-full h-full"
+        />
+      </div>
+      <h3 className="text-lg font-semibold">{title}</h3>
+      <p className="text-gray-600 mt-1 text-center">{description}</p>
+    </div>
+  );
+};
+
+export default Card;

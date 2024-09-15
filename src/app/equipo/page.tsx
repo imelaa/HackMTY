@@ -1,20 +1,21 @@
-'use client';
-import { useRouter } from "next/navigation";
-import React from "react";
-// import equipos_card  from "../components/equipos_card";
-import {Button} from "flowbite-react";
-export default function Home() {
-  const router = useRouter();
+"use client";
 
-  const handleLoginClick = () => {
-    router.push("/login");
+import React, { useState } from "react";
+import Sidebar from "../components/sidebar";
+
+export default function Component() {
+  const [selectedOption, setSelectedOption] = useState<number>(1);
+
+  const handleSelect = (index: number) => {
+    setSelectedOption(index);
   };
-  const handleSingingClick = () => {
-    router.push("/singin");
-  };
-return (
-    <>
-    
-    </>
-)
+
+  return (
+    <div className="flex h-screen bg-white">
+      <Sidebar selectedOption={selectedOption} onSelect={handleSelect} />
+      <main className="flex-1 p-4">
+        {/* You can add other content here if needed */}
+      </main>
+    </div>
+  );
 }
