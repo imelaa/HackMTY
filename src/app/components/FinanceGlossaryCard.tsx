@@ -12,7 +12,7 @@ interface SingleCardProps {
 
 const FinanceGlossaryCard: React.FC = () => {
   return (
-    <section className="bg-gray-2 pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px]">
+    <section className="bg-white pb-10 pt-20 lg:pb-20 lg:pt-[120px]">
       <div className="container">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {/* Add your finance glossary cards here */}
