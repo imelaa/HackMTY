@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React, { useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
@@ -12,8 +13,8 @@ const Sidebar: React.FC<SidebarProps> = ({ selectedOption, onSelect }) => {
   const router = useRouter();
   const pathname = usePathname();
 
-  
-  const links = ["Main", "Indexes", "Team", "Rewards"];
+  // Links as a constant
+  const links = ["Main", "Index", "Team", "Rewards"];
 
   useEffect(() => {
     const currentPathIndex = links.findIndex(
@@ -23,13 +24,13 @@ const Sidebar: React.FC<SidebarProps> = ({ selectedOption, onSelect }) => {
       onSelect(currentPathIndex + 1);
     }
   }, [pathname, onSelect, links]);
-  }, [pathname, onSelect, links]);
 
   return (
     <div className="fixed top-0 left-0 h-screen w-64 bg-[#d03027] text-white flex flex-col shadow-lg z-50">
       <div className="h-32 bg-white w-full flex items-center justify-center text-black p-4">
-        <Image src={logo} alt="Logo" className=" w-auto" />
+        <Image src={logo} alt="Logo" className="h-16 w-auto" />
       </div>
+
       <ul className="flex-1 overflow-y-auto">
         {links.map((text, index) => (
           <li
@@ -49,7 +50,7 @@ const Sidebar: React.FC<SidebarProps> = ({ selectedOption, onSelect }) => {
         ))}
       </ul>
 
-      <div className="px-4 py-3 text-sm text-gray-300 text-center border-t border-white">
+      <div className="px-4 py-3 text-sm text-gray-300 text-center border-t border-gray-600">
         © FutureFunds
       </div>
     </div>
