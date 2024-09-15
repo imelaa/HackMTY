@@ -1,4 +1,3 @@
-// src/components/Crossword.tsx
 import React, { useState } from 'react';
 import { Term } from '../data/terms';
 
@@ -14,15 +13,7 @@ const Cell: React.FC<CellProps> = ({ value, onChange }) => {
       value={value}
       onChange={(e) => onChange(e.target.value.toUpperCase())}
       maxLength={1}
-      style={{
-        width: '30px', // Tamaño de las celdas reducido
-        height: '30px',
-        textAlign: 'center',
-        margin: '1px', // Margen reducido
-        border: '1px solid #ccc',
-        fontSize: '16px', // Tamaño de letra reducido
-        backgroundColor: '#fff',
-      }}
+      className="w-10 h-10 text-center border border-gray-300 text-lg bg-white"
     />
   );
 };
@@ -50,74 +41,44 @@ const Crossword: React.FC<CrosswordProps> = ({ terms }) => {
   };
 
   return (
-    <div style={{ padding: '20px', display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', backgroundColor: '#fff' }}>
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 2fr',
-          gap: '20px',
-          width: '80%',
-          maxHeight: '80vh',
-          backgroundColor: '#004977',
-          padding: '10px',
-          borderRadius: '10px',
-          boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
-        }}
-      >
-        {/* Sección de Pistas */}
-        <div
-          style={{
-            overflowY: 'scroll',
-            padding: '10px',
-            border: '1px solid #ddd',
-            borderRadius: '10px',
-            maxHeight: '70vh',
-          }}
-        >
-          <h3 style={{ textAlign: 'center', marginBottom: '10px' }}>Pistas</h3>
-          {terms.map((term, index) => (
-            <div key={index} style={{ marginBottom: '10px' }}>
-              <strong>{index + 1}. </strong> {term.hint}
-            </div>
-          ))}
+    <div className="flex justify-center items-center min-h-screen bg-white text-black p-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-4xl bg-[#004977] p-4 rounded-lg shadow-md">
+        {/* Clues Section */}
+        <div className="overflow-y-auto p-4 border border-gray-300 rounded-lg max-h-[70vh] bg-white">
+          <h3 className="text-center mb-4 text-lg font-semibold text-gray-800">Pistas</h3>
+          {terms.length === 0 ? (
+            <p className="text-center text-gray-500">No clues available</p>
+          ) : (
+            terms.map((term, index) => (
+              <div key={index} className="mb-4 text-gray-700">
+                <strong>{index + 1}. </strong> {term.hint}
+              </div>
+            ))
+          )}
         </div>
 
-        {/* Sección del Crucigrama con desplazamiento */}
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <div
-            style={{
-              overflowY: 'scroll', // Habilitar desplazamiento vertical
-              maxHeight: '70vh', // Limitar la altura máxima del contenedor
-              padding: '10px',
-              border: '1px solid #ddd',
-              borderRadius: '10px',
-            }}
-          >
-            {terms.map((term, termIndex) => (
-              <div key={termIndex} style={{ marginBottom: '20px', textAlign: 'center' }}>
-                <strong>{termIndex + 1}</strong>
-                <div
-                  style={{
-                    display: 'grid',
-                    gridTemplateColumns: `repeat(${term.word.length}, 30px)`,
-                    gap: '1px',
-                    marginTop: '5px',
-                  }}
-                >
-                  {grid[termIndex].map((cell, cellIndex) => (
-                    <Cell
-                      key={cellIndex}
-                      value={cell}
-                      onChange={(value) => handleCellChange(termIndex, cellIndex, value)}
-                    />
-                  ))}
-                </div>
-                <div style={{ marginTop: '5px', color: isComplete(termIndex) ? '#fff' : 'red' }}>
-                  {isComplete(termIndex) ? '¡Correcto!' : 'Completa la palabra'}
-                </div>
+        {/* Crossword Section */}
+        <div className="flex flex-col justify-center items-center overflow-y-auto max-h-[70vh] bg-white p-4 border border-gray-300 rounded-lg">
+          {terms.map((term, termIndex) => (
+            <div key={termIndex} className="mb-4 text-center">
+              <strong className="block mb-2">{termIndex + 1}</strong>
+              <div
+                className="grid gap-1"
+                style={{ gridTemplateColumns: `repeat(${term.word.length}, minmax(0, 1fr))` }}
+              >
+                {grid[termIndex].map((cell, cellIndex) => (
+                  <Cell
+                    key={cellIndex}
+                    value={cell}
+                    onChange={(value) => handleCellChange(termIndex, cellIndex, value)}
+                  />
+                ))}
               </div>
-            ))}
-          </div>
+              <div className={`mt-2 ${isComplete(termIndex) ? 'text-green-500' : 'text-red-500'}`}>
+                {isComplete(termIndex) ? '¡Correcto!' : 'Completa la palabra'}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

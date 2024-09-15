@@ -17,3 +17,4 @@ export interface Term {
     { word: 'DIVIDEND', hint: 'A portion of a company’s earnings distributed to shareholders.' },
   ];
   
+  export default terms;
