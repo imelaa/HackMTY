@@ -15,7 +15,7 @@ const Sidebar: React.FC<SidebarProps> = ({ selectedOption, onSelect }) => {
   const pathname = usePathname();
 
   // Links as a constant
-  const links = ["Main", "Program", "Team", "Rewards"];
+  const links = ["Main", "Program", "Team", "Rewards", "Glossary"];
 
   React.useEffect(() => {
     const currentPathIndex = links.findIndex(
