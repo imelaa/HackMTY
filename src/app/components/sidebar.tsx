@@ -1,8 +1,9 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React from "react";
 import { useRouter, usePathname } from "next/navigation";
 import logo from "/public/logo.svg";
+import Avatar12 from "../components/ui/avatar"; // Adjust the import path as needed
 
 interface SidebarProps {
   selectedOption: number;
@@ -16,7 +17,7 @@ const Sidebar: React.FC<SidebarProps> = ({ selectedOption, onSelect }) => {
   // Links as a constant
   const links = ["Main", "Program", "Team", "Rewards"];
 
-  useEffect(() => {
+  React.useEffect(() => {
     const currentPathIndex = links.findIndex(
       (link) => `/${link.toLowerCase().replace(" ", "-")}` === pathname
     );
@@ -28,7 +29,7 @@ const Sidebar: React.FC<SidebarProps> = ({ selectedOption, onSelect }) => {
   return (
     <div className="fixed top-0 left-0 h-screen w-64 bg-[#d03027] text-white flex flex-col shadow-lg z-50">
       <div className="h-32 bg-white w-full flex items-center justify-center text-black p-4">
-        <Image src={logo} alt="Logo" className=" w-auto" />
+        <Image src={logo} alt="Logo" className="w-auto" />
       </div>
 
       <ul className="flex-1 overflow-y-auto">
@@ -49,6 +50,8 @@ const Sidebar: React.FC<SidebarProps> = ({ selectedOption, onSelect }) => {
           </li>
         ))}
       </ul>
+
+      <Avatar12 />
 
       <div className="px-4 py-3 text-sm text-gray-300 text-center border-t border-white">
         © FutureFunds
