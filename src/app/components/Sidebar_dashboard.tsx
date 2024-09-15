@@ -17,7 +17,7 @@ const Sidebar: React.FC<SidebarProps> = ({ selectedOption, onSelect }) => {
       <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-black text-lg mt-5 mx-auto">
         <Image src={logo} alt="Logo" width={100} height={100} />
       </div>
-      <div className="text-center py-3 font-bold text-xl">FutureFunds</div>
+      
       <ul className="flex-1">
         {["Main Menu", "Indice", "Equipo", "Rewards"].map((text, index) => (
           <li
