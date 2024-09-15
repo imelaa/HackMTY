@@ -224,7 +224,7 @@ export default function FinancialEducationPlatform() {
           ) : (
             <div className="flex flex-col items-center justify-center h-full p-4 bg-gray-100 border border-gray-300 rounded-lg">
   <p className="text-lg text-center text-[#D22E1E] font-bold">
-    A continuación, te solicitamos respondas unas preguntas para determinar tu rol dentro de las finanzas.
+  Please answer the following questions to help us determine your role in the financial world.
   </p>
 </div>
           )}
@@ -250,7 +250,7 @@ export default function FinancialEducationPlatform() {
             <div className="relative h-full">
               <div className="absolute top-0 left-0 right-0 bg-white bg-opacity-75 p-4 text-center z-10">
                 <h2 className="text-3xl font-bold text-[#D22E1E]">
-                  Welcome to Financial Education
+                Unlocking Financial Power for the Next Generation
                 </h2>
               </div>
               <img

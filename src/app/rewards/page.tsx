@@ -60,11 +60,16 @@ export default function Rewards() {
   };
 
   return (
-    <div className="flex h-screen bg-white">
+    <div className="flex h-screen">
+      {/* Sidebar */}
       <Sidebar selectedOption={selectedOption} onSelect={handleSelect} />
-      <main className="flex-1 p-4">
-        <div className="container mx-auto p-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+
+      {/* Main Content */}
+      <main className="flex-1 ml-64 p-6 overflow-y-auto bg-gray-50">
+        {/* Adjust the padding and margins for responsiveness */}
+        <div className="container mx-auto">
+          <h1 className="text-2xl font-bold mb-6 text-gray-800">Rewards</h1>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {cardData.map((card, index) => (
               <Card
                 key={index}
