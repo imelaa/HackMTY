@@ -26,12 +26,12 @@ const Sidebar: React.FC<SidebarProps> = ({ selectedOption, onSelect }) => {
   }, [pathname, onSelect, links]); // Ensure links is in the dependency array
 
   return (
-    <div className="h-screen w-64 bg-[#d03027] text-white flex flex-col shadow-md z-50">
-      <div className="h-32 bg-white w-full flex items-center justify-center text-black text-lg mt-5 mx-auto">
+    <div className="fixed top-0 left-0 h-screen w-64 bg-[#d03027] text-white flex flex-col shadow-md z-50">
+      <div className="h-32 bg-white w-full flex items-center justify-center text-black text-lg mx-auto">
         <Image src={logo} alt="Logo" />
       </div>
 
-      <ul className="flex-1">
+      <ul className="flex-1 overflow-y-auto">
         {links.map((text, index) => (
           <li
             key={text}

@@ -1,4 +1,3 @@
-// src/app/page.tsx
 "use client";
 
 import React, { useState } from 'react';
@@ -24,9 +23,9 @@ export default function Component() {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-white">
+    <div className="flex h-screen bg-white">
       <Sidebar selectedOption={selectedOption} onSelect={handleSelect} />
-      <main className="flex-1 p-4">
+      <main className="flex-1 ml-64 p-4 overflow-y-auto">
         <Progress steps={steps} currentStep={currentStep} onStepClick={handleStepClick} />
         <Crossword terms={terms} /> {/* Use imported terms here */}
       </main>
