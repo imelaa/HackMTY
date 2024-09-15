@@ -44,7 +44,7 @@ const Simulator: React.FC = () => {
               type="number"
               value={initialInvestment}
               onChange={(e) => setInitialInvestment(Number(e.target.value))}
-              className="mt-1"
+              className="mt-1, text-black"
             />
           </div>
 
@@ -57,7 +57,7 @@ const Simulator: React.FC = () => {
               type="number"
               value={monthlyContribution}
               onChange={(e) => setMonthlyContribution(Number(e.target.value))}
-              className="mt-1"
+              className="mt-1, text-black"
             />
           </div>
 
@@ -104,7 +104,7 @@ const Simulator: React.FC = () => {
               <YAxis />
               <Tooltip formatter={(value) => `$${value.toLocaleString()}`} />
               <Legend />
-              <Line type="monotone" dataKey="balance" stroke="#8884d8" name="Balance" />
+              <Line type="monotone" dataKey="balance" stroke="#D03027" name="Balance" />
             </LineChart>
           </ResponsiveContainer>
         </div>
