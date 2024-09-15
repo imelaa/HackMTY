@@ -9,7 +9,7 @@ import { Label } from "../components/ui/label"
 import { getRandomQuestions } from "../utils/randomQuestions"
 import { Question, Option, questions } from "../data/questions"
 
-const randomQuestions: Question[] = getRandomQuestions(questions, 3);
+const randomQuestions: Question[] = getRandomQuestions(questions, 5);
 
 export default function FinancialEducationPlatform() {
   const router = useRouter()

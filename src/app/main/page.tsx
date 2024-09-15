@@ -1,81 +1,67 @@
-'use client'
+"use client";
 
-import React, { useState } from "react"
-import Image from "next/image"
-import { useRouter } from "next/navigation"
-import logo from "../../../public/logo.png"
+import React, { useState } from "react";
+import Sidebar from "../components/sidebar";
+import { Progress } from "../components/ui/progress";
 
-
-const GoToMainButton = () => {
-  const router = useRouter();
-
-  const handleClick = () => {
-    router.push('/game');
-  };
+const ProgressBar = ({ steps, currentStep, onStepClick }: { steps: string[]; currentStep: number; onStepClick: (step: number) => void }) => {
+  const progress = (currentStep / (steps.length - 1)) * 100;
 
   return (
-    <button 
-      onClick={handleClick} 
-      className="bg-[#D22E1E] text-white px-4 py-2 rounded hover:bg-[#B01E0E] mt-4"
-    >
-      Go to game
-    </button>
+    <div className="w-full mx-auto mt-4 relative">
+      <Progress value={progress} className="w-full h-4 bg-gray-200 rounded-full" />
+      <div className="absolute top-0 left-0 w-full flex justify-between" style={{ transform: 'translateY(-50%)' }}>
+        {steps.map((step, index) => (
+          <button
+            key={index}
+            onClick={() => onStepClick(index)}
+            className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold ${
+              index <= currentStep ? "bg-[#d03027] text-white" : "bg-gray-200 text-gray-400"
+            } focus:outline-none transition-colors duration-200`}
+            disabled={index > currentStep + 1}
+          >
+            {index + 1}
+          </button>
+        ))}
+      </div>
+      <div className="flex justify-between mt-4 text-lg">
+        {steps.map((step, index) => (
+          <div
+            key={index}
+            className={`${
+              index <= currentStep ? "text-[#d03027]" : "text-gray-400"
+            }`}
+          >
+            {step}
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 
-interface SidebarProps {
-  selectedOption: number
-  onSelect: (index: number) => void
-}
-
-const Sidebar: React.FC<SidebarProps> = ({ selectedOption, onSelect }) => {
-  const router = useRouter()
-
-  return (
-    <div className="h-screen w-64 bg-[#d03027] text-white flex flex-col shadow-md z-50">
-      <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-black text-lg mt-5 mx-auto">
-        <Image src={logo} alt="Logo" width={100} height={100} />
-      </div>
-      <div className="text-center py-3 font-bold text-xl">FutureFunds</div>
-      <ul className="flex-1">
-        {["Main Menu", "Indice", "Equipo", "Rewards"].map((text, index) => (
-          <li
-            key={text}
-            onClick={() => {
-              onSelect(index + 1)
-              router.push(`/${text.toLowerCase().replace(" ", "-")}`)
-            }}
-            className={`px-4 py-2 cursor-pointer font-semibold text-center mx-3 rounded-[15px] my-5 transition-colors duration-500 ${
-              selectedOption === index + 1
-                ? "bg-white text-[#d03027]"
-                : "text-white hover:text-[#d03027] hover:bg-red-700"
-            }`}
-          >
-            {text}
-          </li>
-        ))}
-      </ul>
-      <div className="px-4 py-2 text-sm text-gray-200 text-center">
-        © FutureFunds
-      </div>
-    </div>
-  )
-}
-
 export default function Component() {
-  const [selectedOption, setSelectedOption] = useState<number>(1)
+  const [selectedOption, setSelectedOption] = useState<number>(1);
+  const [currentStep, setCurrentStep] = useState(0);
 
   const handleSelect = (index: number) => {
-    setSelectedOption(index)
-  }
+    setSelectedOption(index);
+  };
+
+  const steps = ["Start", "Loading", "Ready"];
+
+  const handleStepClick = (step: number) => {
+    if (step <= currentStep + 1) {
+      setCurrentStep(step);
+    }
+  };
 
   return (
     <div className="flex h-screen bg-white">
       <Sidebar selectedOption={selectedOption} onSelect={handleSelect} />
       <main className="flex-1 p-4">
-        <GoToMainButton />
-        {/* You can add more content here as needed */}
+        <ProgressBar steps={steps} currentStep={currentStep} onStepClick={handleStepClick} />
       </main>
     </div>
-  )
+  );
 }

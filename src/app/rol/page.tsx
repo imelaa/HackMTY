@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Card from "../components/rol_card";
-import Sidebar from "../components/Sidebar_dashboard";
+import Sidebar from "../components/sidebar";
 import Navbar from "../components/Navbar_dashboard";
 
 export default function Page() {
