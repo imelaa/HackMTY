@@ -29,8 +29,8 @@ const Cards = () => {
         } else {
           setData(response.data);
         }
-      } catch (err: any) {
-        setError(err.message || 'Error fetching data');
+      } catch (err: unknown) {
+        setError(err as string);
       } finally {
         setLoading(false);
       }

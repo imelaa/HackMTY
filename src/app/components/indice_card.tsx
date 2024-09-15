@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import indice, { Block } from '../data/indice';
+import { useEffect } from 'react';
 
 const IndexCard: React.FC = () => {
   const [expandedBlockIndex, setExpandedBlockIndex] = useState<number | null>(null);
@@ -18,7 +19,7 @@ const IndexCard: React.FC = () => {
           >
             <div className="flex">
               <img 
-                src={'/calender-dynamic-color.png'} 
+                src={'/calender_dynamic_color.png'} 
                 alt={block.title} 
                 className="w-1/3 h-auto object-cover" // Image on the left taking up 1/3 of the container
               />
