@@ -1,28 +1,57 @@
-"use client"
+// components/ui/progress.tsx
 
-import * as React from "react"
-import * as ProgressPrimitive from "@radix-ui/react-progress"
+import React from "react";
 
-import { cn } from "../../lib/utils"
+interface ProgressProps {
+  steps: string[];
+  currentStep: number;
+  onStepClick: (step: number) => void;
+}
 
-const Progress = React.forwardRef<
-  React.ElementRef<typeof ProgressPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root>
->(({ className, value, ...props }, ref) => (
-  <ProgressPrimitive.Root
-    ref={ref}
-    className={cn(
-      "relative h-4 w-full overflow-hidden rounded-full bg-secondary",
-      className
-    )}
-    {...props}
-  >
-    <ProgressPrimitive.Indicator
-      className="h-full w-full flex-1 bg-primary transition-all"
-      style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
-    />
-  </ProgressPrimitive.Root>
-))
-Progress.displayName = ProgressPrimitive.Root.displayName
+const Progress: React.FC<ProgressProps> = ({ steps, currentStep, onStepClick }) => {
+  const progress = (currentStep / (steps.length - 1)) * 100;
 
-export { Progress }
+  return (
+    <div className="w-full mx-auto mt-4 relative">
+      <div className="w-full h-4 bg-gray-200 rounded-full">
+        <div
+          className="h-full w-full bg-[#d03027] rounded-full"
+          style={{ width: `${progress}%` }}
+        />
+      </div>
+      <div className="absolute top-0 left-0 w-full flex justify-between" style={{ transform: 'translateY(-40%)' }}>
+        {steps.map((_, index) => {
+          return (
+            <button
+              key={index}
+              onClick={() => onStepClick(index)}
+              className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold ${
+                index <= currentStep ? "bg-[#d03027] text-white" : "bg-gray-200 text-gray-400"
+              } focus:outline-none transition-colors duration-200`}
+              disabled={index > currentStep + 1}
+            >
+              <span className="absolute">{index + 1}</span> {/* Display number */}
+            </button>
+          );
+        })}
+      </div>
+      <div className="flex justify-between mt-4 text-lg">
+        {steps.map((step, index) => {
+          const stepStatus = index < currentStep ? "Completed" : index === currentStep ? "In progress" : "Locked";
+          return (
+            <div
+              key={index}
+              className={`${
+                index <= currentStep ? "text-[#d03027]" : "text-gray-400"
+              }`}
+            >
+              {stepStatus}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+export default Progress;
