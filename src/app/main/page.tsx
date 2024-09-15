@@ -2,8 +2,9 @@
 
 import React, { useState } from 'react';
 import Sidebar from '../components/sidebar';
-import Progress from '../components/ui/progress'; // Adjust the path as needed
-import Crossword from '../components/CroosWord'; // Correct relative path
+import Progress from '../components/ui/progress';
+import Crossword from '../components/CroosWord';
+import Simulator from '../components/simulator'; // Import the Simulator component
 import terms from '../data/terms'; // Import the terms array
 
 export default function Component() {
@@ -27,7 +28,13 @@ export default function Component() {
       <Sidebar selectedOption={selectedOption} onSelect={handleSelect} />
       <main className="flex-1 ml-64 p-4 overflow-y-auto">
         <Progress steps={steps} currentStep={currentStep} onStepClick={handleStepClick} />
-        <Crossword terms={terms} /> {/* Use imported terms here */}
+
+        {/* Conditionally render the Crossword or Simulator component */}
+        {currentStep < 1 ? (
+          <Crossword terms={terms} />
+        ) : (
+          <Simulator /> 
+        )}
       </main>
     </div>
   );

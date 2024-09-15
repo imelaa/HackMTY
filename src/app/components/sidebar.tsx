@@ -13,8 +13,8 @@ const Sidebar: React.FC<SidebarProps> = ({ selectedOption, onSelect }) => {
   const router = useRouter();
   const pathname = usePathname();
 
-  // Links as a constant
-  const links = ["Main", "Indice", "Equipo", "Rewards"];
+  
+  const links = ["Main", "Indexes", "Team", "Rewards"];
 
   useEffect(() => {
     const currentPathIndex = links.findIndex(
@@ -23,12 +23,12 @@ const Sidebar: React.FC<SidebarProps> = ({ selectedOption, onSelect }) => {
     if (currentPathIndex !== -1) {
       onSelect(currentPathIndex + 1);
     }
-  }, [pathname, onSelect, links]); // Ensure links is in the dependency array
+  }, [pathname, onSelect, links]);
 
   return (
-    <div className="fixed top-0 left-0 h-screen w-64 bg-[#d03027] text-white flex flex-col shadow-md z-50">
-      <div className="h-32 bg-white w-full flex items-center justify-center text-black text-lg mx-auto">
-        <Image src={logo} alt="Logo" />
+    <div className="fixed top-0 left-0 h-screen w-64 bg-[#d03027] text-white flex flex-col shadow-lg z-50">
+      <div className="h-32 bg-white w-full flex items-center justify-center text-black p-4">
+        <Image src={logo} alt="Logo" className=" w-auto" />
       </div>
 
       <ul className="flex-1 overflow-y-auto">
@@ -39,9 +39,9 @@ const Sidebar: React.FC<SidebarProps> = ({ selectedOption, onSelect }) => {
               onSelect(index + 1);
               router.push(`/${text.toLowerCase().replace(" ", "-")}`);
             }}
-            className={`px-4 py-2 cursor-pointer font-semibold text-center mx-3 rounded-[5px] my-5 ${
+            className={`px-4 py-3 cursor-pointer font-semibold text-center mx-2 rounded-lg my-2 transition-colors duration-300 ${
               selectedOption === index + 1
-                ? "bg-white text-[#d03027] transition-none" // Remove transition on active
+                ? "bg-white text-[#d03027] shadow-lg"
                 : "text-white hover:text-[#d03027] hover:bg-red-700"
             }`}
           >
@@ -49,7 +49,8 @@ const Sidebar: React.FC<SidebarProps> = ({ selectedOption, onSelect }) => {
           </li>
         ))}
       </ul>
-      <div className="px-4 py-2 text-sm text-gray-200 text-center">
+
+      <div className="px-4 py-3 text-sm text-gray-300 text-center border-t border-white">
         © FutureFunds
       </div>
     </div>
