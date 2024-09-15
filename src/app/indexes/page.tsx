@@ -12,17 +12,12 @@ export default function Page() {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-white">
-      <div className="flex flex-1">
+    <div className="flex h-screen bg-white">
         <Sidebar selectedOption={selectedOption} onSelect={handleSelect} />
-        <main className="flex-1 p-4 overflow-y-auto h-screen">
-          {/* Contenido principal */}
-          <IndexCard />
+        <main className="flex-1 ml-64 p-4 overflow-y-auto">
+        <IndexCard />
         </main>
-      </div>
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <p>This is the footer</p>
-      </footer>
+
     </div>
   );
 }

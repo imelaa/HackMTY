@@ -17,13 +17,11 @@ const IndexCard: React.FC = () => {
             onClick={() => handleCardClick(blockIndex)}
           >
             <div className="flex">
-              {/* Imagen a la izquierda */}
               <img 
                 src={'/calender-dynamic-color.png'} 
                 alt={block.title} 
-                className="w-1/3 h-auto object-cover" // Imagen a la izquierda ocupando 1/3 del contenedor
+                className="w-1/3 h-auto object-cover" // Image on the left taking up 1/3 of the container
               />
-              {/* Contenido de la card */}
               <div className="w-2/3 p-4 flex items-center justify-center">
                 <h2 className="text-3xl font-bold text-center">{block.title}</h2>
               </div>
@@ -32,7 +30,7 @@ const IndexCard: React.FC = () => {
               <div className="p-4">
                 <p className="mb-4">{block.objective}</p>
 
-                <h3 className="text-lg font-semibold mb-2">Actividades</h3>
+                <h3 className="text-lg font-semibold mb-2">Activities</h3>
                 <ul className="list-disc list-inside mb-4">
                   {block.activities.map((activity, activityIndex) => (
                     <li key={activityIndex} className="mb-2">
@@ -43,8 +41,8 @@ const IndexCard: React.FC = () => {
 
                 {block.challenge && (
                   <div className="mb-4">
-                    <h3 className="text-lg font-semibold mb-2">Desafío Final</h3>
-                    <p className="mb-2"><strong>Título:</strong> {block.challenge.title}</p>
+                    <h3 className="text-lg font-semibold mb-2">Final Challenge</h3>
+                    <p className="mb-2"><strong>Title:</strong> {block.challenge.title}</p>
                     <h4 className="font-semibold mb-2">Roles</h4>
                     <ul className="list-disc list-inside">
                       {block.challenge.roles.map((role, roleIndex) => (
@@ -58,15 +56,15 @@ const IndexCard: React.FC = () => {
 
                 {block.forum && (
                   <div className="mb-4">
-                    <h3 className="text-lg font-semibold mb-2">Foro</h3>
-                    <p className="mb-2"><strong>Descripción:</strong> {block.forum.description}</p>
-                    <p><strong>Incentivo:</strong> {block.forum.incentive}</p>
+                    <h3 className="text-lg font-semibold mb-2">Forum</h3>
+                    <p className="mb-2"><strong>Description:</strong> {block.forum.description}</p>
+                    <p><strong>Incentive:</strong> {block.forum.incentive}</p>
                   </div>
                 )}
 
                 {block.instructions && (
                   <div className="mb-4">
-                    <h3 className="text-lg font-semibold mb-2">Instrucciones</h3>
+                    <h3 className="text-lg font-semibold mb-2">Instructions</h3>
                     <p className="mb-2">{block.instructions.description}</p>
                     {block.instructions.phases && (
                       <ul className="list-disc list-inside">

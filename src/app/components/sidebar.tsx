@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import React, { useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
@@ -24,13 +23,13 @@ const Sidebar: React.FC<SidebarProps> = ({ selectedOption, onSelect }) => {
       onSelect(currentPathIndex + 1);
     }
   }, [pathname, onSelect, links]);
+  }, [pathname, onSelect, links]);
 
   return (
     <div className="fixed top-0 left-0 h-screen w-64 bg-[#d03027] text-white flex flex-col shadow-lg z-50">
       <div className="h-32 bg-white w-full flex items-center justify-center text-black p-4">
         <Image src={logo} alt="Logo" className=" w-auto" />
       </div>
-
       <ul className="flex-1 overflow-y-auto">
         {links.map((text, index) => (
           <li

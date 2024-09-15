@@ -1,6 +1,3 @@
-// index.ts
-
-// Define la estructura de los datos del índice
 export interface Activity {
   title: string;
   description: string;
@@ -41,123 +38,123 @@ export interface Block {
   roles?: Role[];
 }
 
-// Datos del índice
+// Index data
 const index: Block[] = [
   {
-    title: 'Bloque 1 (Meses 1-3): Introducción a las Finanzas Personales',
-    objective: 'Familiarizar a los participantes con conceptos clave de finanzas personales y trabajo en equipo.',
+    title: 'Block 1 (Months 1-3): Introduction to Personal Finance',
+    objective: 'Familiarize participants with key personal finance concepts and teamwork skills.',
     activities: [
       {
-        title: 'Crear un presupuesto mensual para una familia ficticia',
-        description: 'Todos los miembros del equipo colaboran para identificar ingresos y gastos, establecer objetivos financieros y decidir cómo distribuir los recursos.'
+        title: 'Create a monthly budget for a fictional family',
+        description: 'All team members collaborate to identify income and expenses, set financial goals, and decide how to allocate resources.'
       },
       {
-        title: 'Juego de simulación: Manejo de una emergencia financiera',
-        description: 'El equipo toma decisiones ante un imprevisto (como una emergencia médica o pérdida de empleo). Todos deben proponer soluciones y justificar su elección para que el grupo decida la mejor opción.'
+        title: 'Simulation game: Managing a financial emergency',
+        description: 'The team makes decisions in response to an unexpected event (such as a medical emergency or job loss). Everyone must propose solutions and justify their choice for the group to decide on the best option.'
       },
       {
-        title: 'Desarrollar un plan de ahorro de 3 meses',
-        description: 'En conjunto, crean un plan que incluya el ahorro necesario para un objetivo a corto plazo. Colaboran en la búsqueda de formas para reducir gastos y aumentar los ahorros.'
+        title: 'Develop a 3-month savings plan',
+        description: 'Together, create a plan that includes the necessary savings for a short-term goal. Collaborate on finding ways to reduce expenses and increase savings.'
       }
     ],
     challenge: {
-      title: 'Desafío Final',
+      title: 'Final Challenge',
       roles: [
         {
-          role: 'Líder Estratégico',
-          description: 'Define las prioridades y elabora un informe sobre la toma de decisiones y la distribución de los recursos.'
+          role: 'Strategic Leader',
+          description: 'Defines priorities and prepares a report on decision-making and resource allocation.'
         },
         {
-          role: 'Analista Financiero',
-          description: 'Realiza el análisis de los datos financieros recopilados durante las actividades y presenta un resumen de las proyecciones.'
+          role: 'Financial Analyst',
+          description: 'Analyzes the financial data collected during the activities and presents a summary of projections.'
         },
         {
-          role: 'Ejecutor Creativo',
-          description: 'Presenta un plan visual (infografía o presentación) que explique el resultado del plan de ahorro y cómo se pueden alcanzar los objetivos.'
+          role: 'Creative Executor',
+          description: 'Presents a visual plan (infographic or presentation) explaining the savings plan results and how goals can be achieved.'
         }
       ]
     },
     forum: {
-      description: 'Los equipos suben sus resultados en el foro, incluyendo el presupuesto, el plan de ahorro y el informe del desafío final. Cada equipo debe revisar y comentar al menos dos presentaciones de otros equipos.',
-      incentive: 'Reciben puntos adicionales por comentar en el foro y dar retroalimentación constructiva.'
+      description: 'Teams upload their results to the forum, including the budget, savings plan, and final challenge report. Each team must review and comment on at least two presentations from other teams.',
+      incentive: 'Earn additional points for commenting on the forum and providing constructive feedback.'
     }
   },
   {
-    title: 'Bloque 2 (Meses 4-6): Inversiones y Toma de Riesgos',
-    objective: 'Introducir a los adolescentes al concepto de inversión y enseñarles a tomar decisiones considerando el riesgo y la recompensa.',
+    title: 'Block 2 (Months 4-6): Investments and Risk Taking',
+    objective: 'Introduce teens to the concept of investing and teach them to make decisions considering risk and reward.',
     activities: [
       {
-        title: 'Simulación de inversión con $1,000 ficticios',
-        description: 'El equipo decide en qué activos invertir (acciones, bonos, etc.) basándose en el perfil de riesgo que definan.'
+        title: 'Investment simulation with $1,000 in fictional funds',
+        description: 'The team decides on which assets to invest in (stocks, bonds, etc.) based on the risk profile they define.'
       },
       {
-        title: 'Evaluar diferentes estrategias de inversión',
-        description: 'Los participantes investigan y discuten las ventajas y desventajas de distintas opciones (inversiones conservadoras vs. arriesgadas).'
+        title: 'Evaluate different investment strategies',
+        description: 'Participants research and discuss the advantages and disadvantages of various options (conservative vs. risky investments).'
       },
       {
-        title: 'Estudio de caso sobre la gestión de crisis financiera',
-        description: 'Analizan un escenario de crisis financiera y colaboran en cómo ajustar sus inversiones para minimizar pérdidas.'
+        title: 'Case study on financial crisis management',
+        description: 'Analyze a financial crisis scenario and collaborate on how to adjust investments to minimize losses.'
       }
     ],
     challenge: {
-      title: 'Desafío Final',
+      title: 'Final Challenge',
       roles: [
         {
-          role: 'Líder Estratégico',
-          description: 'Desarrolla una estrategia de inversión a largo plazo basada en la simulación y las discusiones del equipo.'
+          role: 'Strategic Leader',
+          description: 'Develops a long-term investment strategy based on the simulation and team discussions.'
         },
         {
-          role: 'Analista Financiero',
-          description: 'Presenta un análisis detallado del riesgo y rendimiento potencial de las inversiones realizadas por el equipo.'
+          role: 'Financial Analyst',
+          description: 'Presents a detailed analysis of risk and potential return of the team’s investments.'
         },
         {
-          role: 'Ejecutor Creativo',
-          description: 'Diseña una presentación visual que explique las decisiones de inversión y los resultados obtenidos, usando gráficos y tablas.'
+          role: 'Creative Executor',
+          description: 'Designs a visual presentation explaining investment decisions and results, using charts and tables.'
         }
       ]
     },
     forum: {
-      description: 'Los equipos suben los resultados de sus estrategias de inversión, análisis y presentación del desafío final. Revisan y comentan las estrategias de otros equipos, discutiendo los riesgos y aciertos en las decisiones de inversión.',
-      incentive: 'Puntos adicionales por cada revisión realizada a los proyectos de otros equipos.'
+      description: 'Teams upload their investment strategy results, analysis, and final challenge presentation. They review and comment on other teams’ strategies, discussing the risks and successes in investment decisions.',
+      incentive: 'Additional points for each review completed on other teams’ projects.'
     }
   },
   {
-    title: 'Bloque 3 (Meses 7-9): Emprendimiento y Manejo de Negocios',
-    objective: 'Enseñar a los adolescentes a diseñar y gestionar un pequeño negocio, desde la planificación hasta la ejecución y el análisis de rentabilidad.',
+    title: 'Block 3 (Months 7-9): Entrepreneurship and Business Management',
+    objective: 'Teach teens to design and manage a small business, from planning to execution and profitability analysis.',
     activities: [
       {
-        title: 'Diseño de un plan de negocio básico',
-        description: 'El equipo colabora en la creación de un negocio ficticio, definiendo el producto o servicio, estructura de costos, precios y estrategias de marketing.'
+        title: 'Design a basic business plan',
+        description: 'The team collaborates to create a fictional business, defining the product or service, cost structure, pricing, and marketing strategies.'
       },
       {
-        title: 'Proyección de ingresos y gastos',
-        description: 'Todos los miembros deben trabajar juntos para proyectar los ingresos y los gastos mensuales del negocio.'
+        title: 'Projecting income and expenses',
+        description: 'All members work together to project the business’s monthly income and expenses.'
       },
       {
-        title: 'Simulación de crecimiento rápido',
-        description: 'El equipo debe decidir cómo gestionar un crecimiento inesperado en el negocio, ajustando sus estrategias de costos, personal y expansión.'
+        title: 'Simulation of rapid growth',
+        description: 'The team must decide how to manage unexpected growth in the business, adjusting cost, staffing, and expansion strategies.'
       }
     ],
     challenge: {
-      title: 'Desafío Final',
+      title: 'Final Challenge',
       roles: [
         {
-          role: 'Líder Estratégico',
-          description: 'Elabora el plan de negocio detallado, incluyendo estrategias de crecimiento a largo plazo.'
+          role: 'Strategic Leader',
+          description: 'Prepares a detailed business plan, including long-term growth strategies.'
         },
         {
-          role: 'Analista Financiero',
-          description: 'Presenta un análisis financiero del negocio, evaluando los costos y el retorno de inversión.'
+          role: 'Financial Analyst',
+          description: 'Presents a financial analysis of the business, evaluating costs and return on investment.'
         },
         {
-          role: 'Ejecutor Creativo',
-          description: 'Crea un prototipo visual o campaña de marketing para promocionar el producto o servicio del negocio.'
+          role: 'Creative Executor',
+          description: 'Creates a visual prototype or marketing campaign to promote the business’s product or service.'
         }
       ]
     },
     forum: {
-      description: 'Suben los resultados de su plan de negocio, análisis financiero y campaña de marketing. Comentaron al menos dos planes de negocio de otros equipos, ofreciendo sugerencias para mejorar la proyección y estrategia de crecimiento.',
-      incentive: 'Puntos adicionales por la retroalimentación realizada a otros equipos.'
+      description: 'Upload results of the business plan, financial analysis, and marketing campaign. Review at least two business plans from other teams, offering suggestions for improving projection and growth strategy.',
+      incentive: 'Additional points for feedback provided to other teams.'
     }
   },
 ];
