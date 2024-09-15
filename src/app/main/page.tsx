@@ -26,36 +26,44 @@ export default function Page() {
               content={
                 <div>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet
-                    ligula eu turpis pretium, eget dapibus lacus dictum. Integer eget quam sapien.
-                    Curabitur vel neque at dui consectetur tempor ut at nunc. Nulla facilisi.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet
-                    ligula eu turpis pretium, eget dapibus lacus dictum. Integer eget quam sapien.
-                    Curabitur vel neque at dui consectetur tempor ut at nunc. Nulla facilisi.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet
-                    ligula eu turpis pretium, eget dapibus lacus dictum. Integer eget quam sapien.
-                    Curabitur vel neque at dui consectetur tempor ut at nunc. Nulla facilisi.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet
-                    ligula eu turpis pretium, eget dapibus lacus dictum. Integer eget quam sapien.
-                    Curabitur vel neque at dui consectetur tempor ut at nunc. Nulla facilisi.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus imperdiet ligula eu turpis pretium, eget dapibus
+                    lacus dictum. Integer eget quam sapien. Curabitur vel neque
+                    at dui consectetur tempor ut at nunc. Nulla facilisi. Lorem
+                    ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+                    imperdiet ligula eu turpis pretium, eget dapibus lacus
+                    dictum. Integer eget quam sapien. Curabitur vel neque at dui
+                    consectetur tempor ut at nunc. Nulla facilisi. Lorem ipsum
+                    dolor sit amet, consectetur adipiscing elit. Phasellus
+                    imperdiet ligula eu turpis pretium, eget dapibus lacus
+                    dictum. Integer eget quam sapien. Curabitur vel neque at dui
+                    consectetur tempor ut at nunc. Nulla facilisi. Lorem ipsum
+                    dolor sit amet, consectetur adipiscing elit. Phasellus
+                    imperdiet ligula eu turpis pretium, eget dapibus lacus
+                    dictum. Integer eget quam sapien. Curabitur vel neque at dui
+                    consectetur tempor ut at nunc. Nulla facilisi.
                   </p>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet
-                    ligula eu turpis pretium, eget dapibus lacus dictum. Integer eget quam sapien.
-                    Curabitur vel neque at dui consectetur tempor ut at nunc. Nulla facilisi.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet
-                    ligula eu turpis pretium, eget dapibus lacus dictum. Integer eget quam sapien.
-                    Curabitur vel neque at dui consectetur tempor ut at nunc. Nulla facilisi.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet
-                    ligula eu turpis pretium, eget dapibus lacus dictum. Integer eget quam sapien.
-                    Curabitur vel neque at dui consectetur tempor ut at nunc. Nulla facilisi.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet
-                    ligula eu turpis pretium, eget dapibus lacus dictum. Integer eget quam sapien.
-                    Curabitur vel neque at dui consectetur tempor ut at nunc. Nulla facilisi.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet
-                    ligula eu turpis pretium, eget dapibus lacus dictum. Integer eget quam sapien.
-                    Curabitur vel neque at dui consectetur tempor ut at nunc. Nulla facilisi.
-
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus imperdiet ligula eu turpis pretium, eget dapibus
+                    lacus dictum. Integer eget quam sapien. Curabitur vel neque
+                    at dui consectetur tempor ut at nunc. Nulla facilisi. Lorem
+                    ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+                    imperdiet ligula eu turpis pretium, eget dapibus lacus
+                    dictum. Integer eget quam sapien. Curabitur vel neque at dui
+                    consectetur tempor ut at nunc. Nulla facilisi. Lorem ipsum
+                    dolor sit amet, consectetur adipiscing elit. Phasellus
+                    imperdiet ligula eu turpis pretium, eget dapibus lacus
+                    dictum. Integer eget quam sapien. Curabitur vel neque at dui
+                    consectetur tempor ut at nunc. Nulla facilisi. Lorem ipsum
+                    dolor sit amet, consectetur adipiscing elit. Phasellus
+                    imperdiet ligula eu turpis pretium, eget dapibus lacus
+                    dictum. Integer eget quam sapien. Curabitur vel neque at dui
+                    consectetur tempor ut at nunc. Nulla facilisi. Lorem ipsum
+                    dolor sit amet, consectetur adipiscing elit. Phasellus
+                    imperdiet ligula eu turpis pretium, eget dapibus lacus
+                    dictum. Integer eget quam sapien. Curabitur vel neque at dui
+                    consectetur tempor ut at nunc. Nulla facilisi.
                   </p>
                   {/* Puedes agregar más contenido aquí */}
                 </div>
@@ -64,10 +72,6 @@ export default function Page() {
           </div>
         </main>
       </div>
-
-      <footer className="w-full h-24 border-t flex items-center justify-center">
-        <p>This is the footer</p>
-      </footer>
     </>
   );
 }
