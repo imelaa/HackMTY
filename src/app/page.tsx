@@ -9,7 +9,7 @@ export default function Home() {
     router.push("/login");
   };
   const handleSingingClick = () => {
-    router.push("/singin");
+    router.push("/signup");
   };
 
 
