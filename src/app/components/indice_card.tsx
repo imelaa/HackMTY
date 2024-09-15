@@ -19,7 +19,7 @@ const IndexCard: React.FC = () => {
           >
             <div className="flex">
               <img 
-                src={'/calender_dynamic_color.png'} 
+                src={'/calender-dynamic-color.png'} 
                 alt={block.title} 
                 className="w-1/3 h-auto object-cover" // Image on the left taking up 1/3 of the container
               />

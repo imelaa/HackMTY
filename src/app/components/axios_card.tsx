@@ -17,7 +17,8 @@ const Cards = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get('/accounts'); // Endpoint real de Nessie
-        // Si la respuesta es vacía, usamos mock data para mostrar algo
+
+        // Usar datos de prueba si la respuesta está vacía
         if (response.data.length === 0) {
           const mockData: CardData[] = [
             { _id: 1, first_name: 'John', last_name: 'Doe', city: 'New York' },
@@ -29,8 +30,10 @@ const Cards = () => {
         } else {
           setData(response.data);
         }
-      } catch (err: unknown) {
-        setError(err as string);
+      } catch (err) {
+        // Manejo de errores
+        const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred';
+        setError(errorMessage);
       } finally {
         setLoading(false);
       }
