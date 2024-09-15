@@ -71,8 +71,8 @@ const SingleCard: React.FC<SingleCardProps> = ({
   Button,
   CardDescription,
   CardTitle,
-  titleHref = "/#",
-  btnHref = "#",
+  titleHref = "https://www.capitalone.com/learn-grow/money-management/what-is-compound-interest/",
+  btnHref = "https://www.capitalone.com/learn-grow/money-management/what-is-compound-interest/",
 }) => {
   return (
     <div className="mb-10 overflow-hidden rounded-lg bg-white shadow-1 duration-300 hover:shadow-3 dark:bg-dark-2 dark:shadow-card dark:hover:shadow-3">
