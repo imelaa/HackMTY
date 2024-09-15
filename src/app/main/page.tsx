@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Sidebar from '../components/sidebar';
 import Progress from '../components/ui/progress';
-import Crossword from '../components/CroosWord';
+import Crossword from '../components/CroosWord'; 
 import Simulator from '../components/simulator'; // Import the Simulator component
 import terms from '../data/terms'; // Import the terms array
 
@@ -29,11 +29,21 @@ export default function Component() {
       <main className="flex-1 ml-64 p-4 overflow-y-auto">
         <Progress steps={steps} currentStep={currentStep} onStepClick={handleStepClick} />
 
-        {/* Conditionally render the Crossword or Simulator component */}
+        {/* Conditionally render Crossword, Simulator, or the PDF download */}
         {currentStep < 1 ? (
           <Crossword terms={terms} />
+        ) : currentStep === 1 ? (
+          <Simulator />
         ) : (
-          <Simulator /> 
+          <div className="flex h-view flex-col items-center">
+            
+            {/* Optionally, display the PDF directly on the page */}
+            <iframe
+              src="/pdf/cer.pdf" // Path to your PDF in the public folder
+              className="w-full h-96 mt-4 h-svh"
+              title="PDF Preview"
+            />
+          </div>
         )}
       </main>
     </div>
